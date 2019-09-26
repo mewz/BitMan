@@ -1,0 +1,1 @@
+Convert void pointers to bit representations for educational purposes.
