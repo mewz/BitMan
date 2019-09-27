@@ -22,7 +22,7 @@
 void print_bits(char *bits, /* IN */
 		size_t len) /* IN */
 {
-  int i;
+  size_t i;
   for(i = 0; i < len; i ++){
     printf("%i", bits[i]);
   }
@@ -46,7 +46,7 @@ void reverse_inplace(char *ptr, /* IN */
 		     size_t len) /* IN */
 {
   char c;
-  int half, i;
+  size_t half, i;
 
   half = len >> 1;
   for(i = 0; i < half; i ++){
@@ -73,7 +73,7 @@ void remove_leading_zeros(char *ptr, /* IN */
 			  size_t len, /* IN */
 			  size_t *reslen) /* OUT */
 {
-  int counter;
+  size_t counter;
   size_t i = 0;
   bool do_append = false;
   for(counter = 0; counter < len; counter ++){
@@ -115,7 +115,8 @@ char* to_bits(void *ptr, /* IN */
   *reslen = (BITS_LEN * len);
   char *bits = (char*)malloc(*reslen);
 
-  int i, j;
+  size_t i;
+  int j;
   for(i = 0; i < len; i ++){
     unsigned char b = bytes[i];
     for(j = 0; j < BITS_LEN; j ++){
